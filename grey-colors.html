@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Grey Color Changer</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            font-family: Arial, sans-serif;
+        }
+        #colorBox {
+            width: 200px;
+            height: 200px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 18px;
+            color: white;
+            text-shadow: 1px 1px 1px rgba(0,0,0,0.5);
+        }
+    </style>
+</head>
+<body>
+    <div id="colorBox">#808080</div>
+
+    <script>
+        const colorBox = document.getElementById('colorBox');
+        let currentColor = 128; // Start with middle grey (#808080)
+
+        document.addEventListener('keydown', (event) => {
+            if (event.key === 'ArrowUp') {
+                currentColor = Math.min(255, currentColor + 1);
+            } else if (event.key === 'ArrowDown') {
+                currentColor = Math.max(0, currentColor - 1);
+            }
+
+            const hexColor = currentColor.toString(16).padStart(2, '0');
+            const fullHexColor = `#${hexColor}${hexColor}${hexColor}`;
+            
+            colorBox.style.backgroundColor = fullHexColor;
+            colorBox.textContent = fullHexColor;
+        });
+    </script>
+</body>
+</html>
