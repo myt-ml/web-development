@@ -1,0 +1,27 @@
+img{
+  height: 200px;
+  width: 200px;
+}
+#price{
+  font: 4em sans-serif;
+  font-style: oblique;
+}
+#shipping{
+  font-size: 40px;
+  text-transform: capitalize;
+}
+/* BUTTON */
+.add-cart {
+  background-color: #000;
+  border: none;
+  color: #fff;
+  font-size: 20px;
+  text-transform: uppercase;
+  cursor: pointer;
+}
+
+.add-cart:hover {
+  color: #000;
+  background-color: #fff;
+}
+  
